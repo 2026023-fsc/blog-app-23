@@ -1,0 +1,47 @@
+.blog-header {
+    width: 100%;
+    background-color: #ffffff; /* フォームとおそろいのピュアホワイト */
+    padding: 15px 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between; /* タイトルとメニューを左右に離す */
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* ほんのり上品な影 */
+    
+    /* 画面の一番上に固定して配置するためのお守り */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; /* 他の要素より絶対手前に出す！ */
+}
+
+/* ブログのタイトル（みんなのブログ） */
+.blog-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2c3e50; /* フォームのh1より少し落ち着いた大人カラー */
+    letter-spacing: 1px;
+}
+
+/* ナビゲーションメニューの横並び設定 */
+.site-nav ul {
+    list-style: none; /* ポチ丸を消す */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px; /* リンク同士のディスタンス */
+}
+
+/* メニューのリンク文字 */
+.site-nav a {
+    color: #718096;
+    text-decoration: none; /* 下線を消す */
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+/* メニューにマウスを乗せたとき（ふわっとピンクに！） */
+.site-nav a:hover {
+    color: #ff7675; /* タイトルのNew Postとおそろいのエモピンク💖 */
+}

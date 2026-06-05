@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css"
+    <link rel="stylesheet" href="/css/style.css">
     <title>新規投稿</title>
 </head>
 
 <body>
+    <header class="blog-header">
+        <div class="blog-title">みんなのブログ</div>
+
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/blogs">ホーム（一覧）</a></li>
+                <li><a href="/blogs/Post">新規投稿</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <h1>New Post</h1>
-    <form th:action="@{/blogs}" th:object="${blogForm}" method="post"
+    <form th:action="@{/blogs}" th:object="${blogForm}" method="post">
+
+    <div>
+        <label>お名前</label>
+        <input type="text" th:field="*{name}">
+    </div>
 
     <div>
         <lavel>タイトル</lavel>
@@ -25,7 +41,7 @@
         <button type="submit">投稿</button>
         <a th:href="@{/blogs}">キャンセル</a>
     </div>
-</from>
+</form>
 </body>
 </html>
 

@@ -20,7 +20,7 @@ public class BlogController {
     }
 
     @GetMapping("/blogs/Post")
-    public String newBlog(@ModelAttribute BrogForm Brogform){
+    public String newBlog(@ModelAttribute BlogForm Blogform){
         return "blogs/Post";
     }
 }

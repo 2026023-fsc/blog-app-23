@@ -1,0 +1,178 @@
+/* ==========================================================================
+   1. 画面全体のベース設定（背景とか文字とか）
+   ========================================================================== */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    background-color: #f5f7fa; /* 優しいニュアンスグレー */
+    color: #333333;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    padding: 120px 20px 40px 20px; /* 👈 上の余白を「120px」に広げてヘッダーとかぶらないようにする！ */
+    flex-direction: column;         /* 👈 縦並びを完璧にするための一押し */
+    align-items: center;            /* 👈 フォームを真ん中に寄せるための一押し */
+}
+
+/* ==========================================================================
+   追加分：ヘッダー全体のスタイリング（世界観を合わせるよ！）
+   ========================================================================== */
+.blog-header {
+    width: 100%;
+    background-color: #ffffff; /* フォームとおそろいのピュアホワイト */
+    padding: 15px 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between; /* タイトルとメニューを左右に離す */
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* ほんのり上品な影 */
+    
+    /* 画面の一番上に固定して配置するためのお守り */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; /* 他の要素より絶対手前に出す！ */
+}
+
+/* ブログのタイトル（みんなのブログ） */
+.blog-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2c3e50; /* フォームのh1より少し落ち着いた大人カラー */
+    letter-spacing: 1px;
+}
+
+/* ナビゲーションメニューの横並び設定 */
+.site-nav ul {
+    list-style: none; /* ポチ丸を消す */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px; /* リンク同士のディスタンス */
+}
+
+/* メニューのリンク文字 */
+.site-nav a {
+    color: #718096;
+    text-decoration: none; /* 下線を消す */
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+/* メニューにマウスを乗せたとき（ふわっとピンクに！） */
+.site-nav a:hover {
+    color: #ff7675; /* タイトルのNew Postとおそろいのエモピンク💖 */
+}
+
+/* ==========================================================================
+   2. フォーム全体のコンテナ（カード風にするよ）
+   ========================================================================== */
+form {
+    background-color: #ffffff; /* フォームの背景はピュアホワイト */
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 12px; /* 角を丸くして今っぽく */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* ほんのり影をつけて立体感UP */
+}
+
+/* タイトル（New Post）のスタイリング */
+h1 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   3. 入力エリア（タイトル・本文）の調整
+   ========================================================================== */
+form > div {
+    margin-bottom: 24px; /* 入力欄同士のディスタンス */
+}
+
+/* ラベル（タイトル、本文って文字） */
+label, lavel {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4a5568;
+    font-size: 14px;
+}
+/* ※HTMLで「lavel」ってタイポしてたから、どっちでも動くようにしてあるよ！優しい！ */
+
+/* 入力インプット ＆ テキストエリア共通 */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    box-sizing: border-box; /* 幅がはみ出さないお守り */
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f8fafc;
+    transition: all 0.3s ease; /* ふんわりアニメーション */
+    outline: none;
+}
+
+/* 入力欄をカチッとクリック（フォーカス）したときのエフェクト */
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #3182ce; /* さわやかブルーに光る */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+/* 本文の入力欄だけ縦に広げる */
+textarea {
+    min-height: 200px;
+    resize: vertical; /* ユーザーが縦サイズを自由に伸ばせる */
+}
+
+/* ==========================================================================
+   4. ボタンエリア（横並び＆オシャレ化）
+   ========================================================================== */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px; /* ボタンとキャンセルの隙間 */
+    margin-top: 32px;
+    margin-bottom: 0; /* 一番下の余白リセット */
+}
+
+/* 投稿ボタン */
+button[type="submit"] {
+    background-color: #3182ce; /* 主役のブルー */
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* 投稿ボタンにマウスを乗せたとき */
+button[type="submit"]:hover {
+    background-color: #2b6cb0; /* ちょっと濃いブルーになって押しやすそうになる */
+}
+
+/* キャンセルリンク */
+a th:href, .button a {
+    color: #718096;
+    text-decoration: none; /* 下線を消す */
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+/* キャンセルリンクにマウスを乗せたとき */
+a th:href:hover, .button a:hover {
+    color: #4a5568;
+    text-decoration: underline; /* マウス乗せたら下線を出すエモ演出 */
+}
