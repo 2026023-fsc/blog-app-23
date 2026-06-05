@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,5 +18,18 @@
             </ul>
         </nav>
     </header>
+
+    <div class="container">
+        <h1>みんなのブログ一覧</h1>
+        <p th:if="${#lists.isEmpty(blogs)}">まだ投稿が０件だよ</p>
+        <table th:if="${not #lists.isEmpty(blogs)}">
+            <tr th:each="blogs : ${blogs}">
+                <td>
+                    <span th:text="${blogs.name}"></span>
+                    <span th:text="${blogs.title}"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

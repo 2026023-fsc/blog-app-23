@@ -9,6 +9,18 @@ public class BlogForm {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setMainText(String mainText) {
+        this.mainText = mainText;
+    }
+
     public String getTitle(){
         return title;
     }

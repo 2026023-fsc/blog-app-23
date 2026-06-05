@@ -45,3 +45,138 @@
 .site-nav a:hover {
     color: #ff7675; /* タイトルのNew Postとおそろいのエモピンク💖 */
 }
+
+/* ==========================================================================
+   1. 画面全体のベース設定（新規投稿画面とおそろい）
+   ========================================================================== */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+    background-color: #f5f7fa; /* 優しいニュアンスグレー */
+    color: #333333;
+    margin: 0;
+    padding: 120px 20px 40px 20px; /* ヘッダーとかぶらない用の余白 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==========================================================================
+   2. ヘッダー（ここもおそろいでバチバチに馴染ませる！）
+   ========================================================================== */
+.blog-header {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 15px 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.blog-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+}
+
+.site-nav a {
+    color: #718096;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+    color: #ff7675; /* エモピンク💖 */
+}
+
+/* ==========================================================================
+   3. メインコンテンツ（一覧のレイアウト）
+   ========================================================================== */
+.container {
+    max-width: 700px;
+    width: 100%;
+}
+
+/* 「みんなのブログ一覧」のタイトル */
+h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ff7675; /* エモピンク */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 35px;
+    padding-bottom: 10px;
+    border-bottom: 3px dashed #ffb8b8; /* ドットの下線 */
+}
+
+/* 0件のときのメッセージ */
+p {
+    text-align: center;
+    color: #718096;
+    font-size: 16px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   4. ブログ記事一覧（テーブルをカード風に大改造！）
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 20px; /* 記事カード同士の縦の隙間 */
+}
+
+/* 1つの記事カード */
+tr {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* マウスを乗せたらふわっと浮き上がるエフェクト（今っぽさ全開！） */
+tr:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    padding: 24px;
+    display: flex;
+    flex-direction: column; /* 投稿者とタイトルを縦並びにする */
+    gap: 8px; /* 文字同士の隙間 */
+}
+
+/* 投稿者名（小さめにして上品に） */
+td span:first-child {
+    font-size: 13px;
+    color: #a0aec0;
+    font-weight: 600;
+}
+
+/* ブログのタイトル（主役だから目立たせる！） */
+td span:last-child {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1.4;
+}

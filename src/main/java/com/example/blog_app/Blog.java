@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Blog {
     private String name;
-    private final Long id;
+    private Long id;
     private String title;
     private String mainText;
     private LocalDateTime dateTime;
@@ -39,6 +39,10 @@ public class Blog {
 
     public void setName(String name){
         this.name = name;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setTitle(String title) {
