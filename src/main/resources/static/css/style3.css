@@ -1,0 +1,113 @@
+/* ==========================================================================
+   5. ブログ詳細画面（HTML変更なしで完全に画面中央に集める！）
+   ========================================================================== */
+.blog-header {
+    width: 100%;
+    background-color: #ffffff; /* フォームとおそろいのピュアホワイト */
+    padding: 15px 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between; /* タイトルとメニューを左右に離す */
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* ほんのり上品な影 */
+    
+    /* 画面の一番上に固定して配置するためのお守り */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; /* 他の要素より絶対手前に出す！ */
+}
+
+/* ブログのタイトル（みんなのブログ） */
+.blog-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2c3e50; /* フォームのh1より少し落ち着いた大人カラー */
+    letter-spacing: 1px;
+}
+
+/* ナビゲーションメニューの横並び設定 */
+.site-nav ul {
+    list-style: none; /* ポチ丸を消す */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px; /* リンク同士のディスタンス */
+}
+
+/* メニューのリンク文字 */
+.site-nav a {
+    color: #718096;
+    text-decoration: none; /* 下線を消す */
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+/* メニューにマウスを乗せたとき（ふわっとピンクに！） */
+.site-nav a:hover {
+    color: #ff7675; /* タイトルのNew Postとおそろいのエモピンク💖 */
+}
+
+/* 画面全体のベース設定をハック！ */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* ★これで中身をぜんぶ横方向の真ん中に集める！ */
+    justify-content: flex-start;
+    min-height: 100vh;        /* 画面の縦幅いっぱいに使うためのお守り */
+    background-color: #f5f7fa;
+    padding: 120px 20px 40px 20px; /* ヘッダーと被らない余白 */
+    box-sizing: border-box;
+}
+
+/* お名前、タイトル、本文のラベル（ピンクの丸文字） */
+label {
+    display: block;
+    width: 100%;
+    max-width: 600px;         /* ★横幅の限界を決めてあげる */
+    font-size: 13px;
+    font-weight: 700;
+    color: #ff7675;           /* エモピンク💖 */
+    background-color: #fff0f0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-top: 25px;         /* 上の要素とのディスタンス */
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    text-align: left;         /* 文字自体は左寄せで読みやすく */
+}
+
+/* 最初のラベルだけ上の余白をちょっと調整 */
+label:first-of-type {
+    margin-top: 40px;
+}
+
+/* 各項目のテキスト（白カード） */
+span {
+    display: block;
+    width: 100%;
+    max-width: 600px;         /* ★ここもlabelと横幅をそろえるのが綺麗に見えるコツ！ */
+    background-color: #ffffff;/* ピュアホワイト */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 上品な影 */
+    color: #2c3e50;           /* 大人カラー */
+    font-size: 16px;
+    line-height: 1.6;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* 2番目のspan（タイトル）は主役だから目立たせる！ */
+span:nth-of-type(2) {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* 3番目のspan（本文）は長文用設定！ */
+span:nth-of-type(3) {
+    white-space: pre-wrap;    /* 改行を有効にする魔法 */
+    line-height: 1.8;
+    min-height: 200px;        /* しっかりノートっぽく縦幅をあける */
+}

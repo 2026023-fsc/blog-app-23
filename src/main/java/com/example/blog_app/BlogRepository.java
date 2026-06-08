@@ -1,6 +1,7 @@
 package com.example.blog_app;
 
 import java.util.List;
+import java.util.Optional;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 
@@ -26,5 +27,13 @@ public class BlogRepository {
                 .param("mainText", blog.getMainText())
                 .param("dateTime", blog.getDateTime())
                 .update();
+    }
+
+    public Optional<Blog> findById(Long id){
+        return jdbcClient.sql("SELECT name, id, title, mainText, dateTime FROM blogs WHERE id = :id")
+        .param("id", id)
+        .query(Blog.class)
+        .optional();
+
     }
 }

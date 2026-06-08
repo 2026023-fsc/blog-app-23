@@ -23,10 +23,10 @@
         <h1>みんなのブログ一覧</h1>
         <p th:if="${#lists.isEmpty(blogs)}">まだ投稿が０件だよ</p>
         <table th:if="${not #lists.isEmpty(blogs)}">
-            <tr th:each="blogs : ${blogs}">
+            <tr th:each="blog : ${blogs}">
                 <td>
-                    <span th:text="${blogs.name}"></span>
-                    <span th:text="${blogs.title}"></span>
+                    <span th:text="${blog.name}"></span>
+                    <a th:href="@{/blogs/{id}(id=${blog.id})}" th:text="${blog.title}"></a>
                 </td>
             </tr>
         </table>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style3.css">
+    <title></title>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="blog-title">みんなのブログ</div>
+
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/blogs">ホーム（一覧）</a></li>
+                <li><a href="/blogs/Post">新規投稿</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="detail-card">
+            <div class="meta-info">
+
+    <label>投稿者</label>
+    <span th:text="${blog.name}"></span>
+    <label>タイトル</label>
+    <span th:text="${blog.title}"></span>
+    <label>本文</label>
+    <span th:text="${blog.mainText}"></span>
+
+</body>
+</html>
